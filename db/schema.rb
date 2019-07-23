@@ -99,7 +99,11 @@ ActiveRecord::Schema.define(version: 2019_07_19_061403) do
     t.string "activation_token"
     t.string "reset_token"
     t.boolean "activated", default: false
+<<<<<<< HEAD
     t.boolean "non_block", default: false
+=======
+    t.boolean "blocked", default: false
+>>>>>>> sign in up mail
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

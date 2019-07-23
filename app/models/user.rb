@@ -25,7 +25,10 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.pass_min},
                     allow_nil: true
 
+<<<<<<< HEAD
   mount_uploader :avatar, AvatarImageUploader
+=======
+>>>>>>> sign in up mail
   before_create :create_activation_token
 
   class << self
@@ -45,8 +48,11 @@ class User < ApplicationRecord
   def create_activation_token
     self.activation_token = User.new_token
   end
+<<<<<<< HEAD
 
   def feed
     Post.post_auth id
   end
+=======
+>>>>>>> sign in up mail
 end

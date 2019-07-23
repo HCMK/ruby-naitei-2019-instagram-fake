@@ -24,8 +24,11 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+<<<<<<< HEAD
   private
 
+=======
+>>>>>>> sign in up mail
   def load_user
     @user = User.find_by_email params[:email]
   end

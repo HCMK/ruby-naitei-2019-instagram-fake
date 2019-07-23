@@ -1,12 +1,12 @@
 <div class="h-100 bg-gradient">
   <div class="container bg-light w-50">
-    <%= form_tag(sessions_path, class:"pb-3 pt-5") do |form| %>
-      <div class="text-center mb-3 text-black display-4"><%= t "login" %></div>
+    <%= form_tag(admin_sessions_path, class:"pb-3 pt-5") do |form| %>
+      <div class="text-center mb-3 text-black display-4"><%= t "Admin_login" %></div>
       <div class="field input-group mb-3 justify-content-center">
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fa fa-lock"></i></span>
         </div>
-        <%= text_field_tag :email, nil, placeholder: t("email"), class:"center" %>
+        <%= text_field_tag :name, nil, placeholder: t("username"), class:"center" %>
       </div>  
       <div class="field input-group mb-3 justify-content-center">
         <div class="input-group-prepend">

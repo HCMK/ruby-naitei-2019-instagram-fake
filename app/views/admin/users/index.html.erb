@@ -1,0 +1,11 @@
+<% @users.each do |user| %>
+<div class="admin-user">
+<%= link_to user.name, user %>
+<%= Post.joins(:reports).where(user: user).count %>
+<button value="<%= user.id %>" class="btn btn-danger delete-user"><%= t "delete" %></button>
+<button value="<%= user.id %>" class="btn btn-warning block-user">
+<%= user.non_block? ? t("Block") : t("Unblock") %>
+</button>
+<br>
+</div>
+<% end %>

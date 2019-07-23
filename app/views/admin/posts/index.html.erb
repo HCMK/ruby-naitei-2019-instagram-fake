@@ -1,0 +1,11 @@
+<% @posts.each do |post| %>
+<div class="admin-post">
+<%= link_to post.content, post %>
+<%= post.reports.count %>
+<button value="<%= post.id %>" class="btn btn-danger delete-post"><%= t "delete" %></button>
+<button value="<%= post.id %>" class="btn btn-warning block-post">
+<%= post.non_block? ? t("Block") : t("Unblock") %>
+</button>
+<br>
+</div>
+<% end %>

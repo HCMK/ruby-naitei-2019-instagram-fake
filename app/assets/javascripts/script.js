@@ -51,6 +51,39 @@ $(document).ready(function(){
     })
   });
 
+  $(".follow-user").on("click", function(){
+    var btn = this;
+    var id = $(this).val();
+    $.ajax({
+      url: '/en/follow_users',
+      type: 'POST',
+      dataType: 'JSON',
+      followed_id: id
+    }).then(function(result){
+      if (result.status)
+      {
+        btn.innerText = "UnFollow"
+        $(btn).removeClass( "follow-user" ).addClass( "unfollow-user" );
+      }
+    })
+  });
+
+  $(".unfollow-user").on("click", function(){
+    var btn = this;
+    var id = $(this).val();
+    $.ajax({
+      url: '/en/follow_users/' +id,
+      type: 'DELETE',
+      dataType: 'JSON'
+    }).then(function(result){
+      if (result.status)
+      {
+        btn.innerText = "Follow"
+        $(btn).removeClass( "unfollow-user" ).addClass( "follow-user" );
+      }
+    })
+  });
+
   $(".block-post").on("click", function(){
     var id = $(this).val();
     var block = this;

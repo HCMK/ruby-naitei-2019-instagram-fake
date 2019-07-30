@@ -12,13 +12,18 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= image_tag @user.avatar.url %>
+  <%= image_tag @user.avatar.url if @user.avatar.url %>
 </p>
 
 <p>
   <strong>Activated:</strong>
   <%= @user.activated %>
 </p>
-
+<button value="<%= @user.id %>" class="btn btn-danger 
+<%= current_user.following?(@user) ? "unfollow-user" : "follow-user" %>">
+<%= current_user.following?(@user) ? "UnFollow" : "follow" %>
+</button>
+<%= link_to "following", following_user_path(@user)%>
+<%= link_to "follower", followers_user_path(@user)%>
 <%= link_to "Edit", edit_user_path(@user) %> |
 <%= link_to "Back", users_path %>

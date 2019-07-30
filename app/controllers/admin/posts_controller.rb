@@ -32,6 +32,4 @@ class Admin::PostsController < ApplicationController
   def load_post
     @post = Post.find_by id: params[:id]
   end
-
-  def 
 end

@@ -9,13 +9,13 @@
         <div class="col-6 border-right">
           <a href="" class="font-weight-bold">
             <p>Following</p>
-            <span>50</span>
+            <span><%= @current_user.following.count %></span>
           </a>
         </div>
         <div class="col-6">
           <a href="" class="font-weight-bold">
             <p>Followed</p>
-            <span>50</span>
+            <span><%= @current_user.followers.count %></span>
           </a>
         </div>
       </div>
